@@ -2,7 +2,7 @@ import React from 'react';
 
 const ListItem = ({listdata}) => {
     let AirportData;
-
+    console.log(JSON.stringify(listdata[0]))
     if(listdata !== undefined){
         AirportData = listdata.map(item => {
             return (

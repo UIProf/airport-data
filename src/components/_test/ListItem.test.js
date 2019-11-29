@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import DetailData from '../DetailData';
+import ListItem from '../ListItem';
 
-describe('DetailDataComponent', () => {
+describe('OverLayComponent', () => {
 
     let wrapper;
 
@@ -76,13 +76,13 @@ describe('DetailDataComponent', () => {
     beforeEach(() => {
 
         wrapper = shallow(
-            <DetailData detailList={data} />
+            <ListItem listdata={data}/>
         );
         jest.clearAllMocks();
     });
 
 
     test('it should render without error', () => {
-        expect(wrapper.find('.details').exists()).toEqual(true);
+        expect(wrapper.find('.list-item').exists()).toEqual(true);
     });
 })

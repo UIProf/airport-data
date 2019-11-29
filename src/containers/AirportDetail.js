@@ -6,7 +6,7 @@ import _ from 'lodash/object'
 import './AirportDetail.scss';
 import DetailData from '../components/DetailData';
 
-class AirportDetail extends PureComponent{
+export class AirportDetail extends PureComponent{
 
     updatelist = () => {
         const keyword = _.get(this.props, 'match.params.id', '');
@@ -48,4 +48,4 @@ const mapStateToProps = state => {
     };
   };
 
-export default connect(mapStateToProps)(AirportDetail);
+export default connect(mapStateToProps, null)(AirportDetail);

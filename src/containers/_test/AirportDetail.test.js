@@ -1,6 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import DetailData from '../DetailData';
+import AirportDetail from '../AirportDetail';
+import { Provider } from "react-redux";
+import configureStore, { history } from '../../store/configureStore';
+
+export const store = configureStore();
 
 describe('DetailDataComponent', () => {
 
@@ -76,13 +80,19 @@ describe('DetailDataComponent', () => {
     beforeEach(() => {
 
         wrapper = shallow(
-            <DetailData detailList={data} />
+            <Provider store={store}>
+                <AirportDetail airportlist={data}/>
+            </Provider>
+            
         );
         jest.clearAllMocks();
     });
 
 
     test('it should render without error', () => {
-        expect(wrapper.find('.details').exists()).toEqual(true);
+        expect(wrapper.find('.airport-detail').exists()).toEqual(false);
+    });
+    test('it should render Back button without error', () => {
+        expect(wrapper.find('back-btn').exists()).toEqual(true);
     });
 })
