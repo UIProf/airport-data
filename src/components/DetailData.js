@@ -6,7 +6,7 @@ const DetailData = ({detailList}) => {
     let renderdata;
     let timeData;
     let locData;
-
+    console.log(list);
     if(list !== undefined){
         renderdata = list.map((item, i) => {
             return(
