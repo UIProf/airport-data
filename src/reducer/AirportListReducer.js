@@ -18,7 +18,6 @@ export default function AirportListReducer(state = initialState, action){
         case ActionTypes.FETCH_AIRPORT_APP_LOADED:
             return appLoadedHandler(state);
         case ActionTypes.FETCH_AIRPORT_LIST_SUCCESS:{
-            console.log('kkk',action.data);
             return {
                 ...state,
                 list: action.data

@@ -17,13 +17,9 @@ export class AirportDetail extends PureComponent{
 
     }
    
-
     onBackToList = () => {
         this.props.history.goBack();
     }
-
-   
-
 
     render(){
         const detailList = this.updatelist();
@@ -48,4 +44,4 @@ const mapStateToProps = state => {
     };
   };
 
-export default connect(mapStateToProps, null)(AirportDetail);
+export default connect(mapStateToProps)(AirportDetail);
