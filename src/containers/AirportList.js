@@ -7,17 +7,13 @@ import './AirportList.scss';
 
 class AirportList extends PureComponent{
 
-
-    
-
     render(){
         const { airportlist }  = this.props;
-
         return(
             <div className="airport-list">
                 <h1>List All Airports</h1>
                 <ul className="list-group">
-                    <ListItem listdata={airportlist}  onClickBack={this.onClickClose}/>
+                    <ListItem listdata={airportlist} />
                 </ul>
             </div>
         )

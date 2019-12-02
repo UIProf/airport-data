@@ -1,8 +1,11 @@
 import React from 'react';
+import Overlay from './Overlay';
+import {OVERLAY_TYPES} from '../constants/constants';
 
 const ListItem = ({listdata}) => {
+    console.log('dddd', listdata)
     let AirportData;
-    if(listdata !== undefined){
+    if(listdata !== 'undefined'){
         AirportData = listdata.map(item => {
             return (
                 <li className="list-item" key={item.airportCode}>
@@ -14,8 +17,8 @@ const ListItem = ({listdata}) => {
                 </li>
             )
         })
-    }else {
-        AirportData = null;
+    }else{
+        AirportData = <Overlay overlayType={OVERLAY_TYPES.LOADER}/>;
     }
 
     return (

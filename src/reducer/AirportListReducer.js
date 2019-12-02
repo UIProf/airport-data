@@ -1,10 +1,7 @@
 import ActionTypes from '../actions/ActionTypes';
+import initialState from './initialState';
 
-const initialState = {
-  list: [],
-  error: null,
-  appLoading:true
-}
+
 
 export default function AirportListReducer(state = initialState, action){
 

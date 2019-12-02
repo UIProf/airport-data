@@ -1,10 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import AirportDetail from '../AirportDetail';
-import { Provider } from "react-redux";
-import configureStore, { history } from '../../store/configureStore';
-
-export const store = configureStore();
+import {AirportDetail} from '../AirportDetail';
+import DetailData from '../../components/DetailData';
 
 describe('DetailDataComponent', () => {
 
@@ -80,9 +77,7 @@ describe('DetailDataComponent', () => {
     beforeEach(() => {
 
         wrapper = shallow(
-            <Provider store={store}>
                 <AirportDetail airportlist={data}/>
-            </Provider>
             
         );
         jest.clearAllMocks();
@@ -90,9 +85,12 @@ describe('DetailDataComponent', () => {
 
 
     test('it should render without error', () => {
-        expect(wrapper.find('.airport-detail').exists()).toEqual(false);
+        expect(wrapper.find('.airport-detail').exists()).toBe(true);
     });
     test('it should render Back button without error', () => {
-        expect(wrapper.find('back-btn').exists()).toEqual(true);
+        expect(wrapper.find('.back-btn').exists()).toEqual(true);
+    });
+    test('it should render DetailData Component without error', () => {
+        expect(wrapper.find(DetailData).length).toBe(1);
     });
 })
